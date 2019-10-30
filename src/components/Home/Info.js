@@ -2,7 +2,6 @@ import React, { Fragment } from "react"
 import { graphql, StaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import homeStyles from "./home.module.scss"
-import Slider from "./Slider"
 
 const Info = ({ data }) => (
   <StaticQuery
