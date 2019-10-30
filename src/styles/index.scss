@@ -1,0 +1,346 @@
+$primaryText: #070707;
+$secondaryText: #888888;
+$primary: #fab1a0;
+$secondary: #16a085;
+$bgWhite: #f1f2f0;
+$white: #fefefe;
+
+.pyl {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.mbl {
+  margin-bottom: 5rem;
+}
+
+.mbm {
+  margin-bottom: 2rem;
+}
+
+.mbs {
+  margin-bottom: 1rem;
+}
+
+body {
+  background-color: $white;
+  overflow-x: hidden;
+}
+
+.bg-grey {
+  background-color: $bgWhite;
+}
+
+.bg-white {
+  background-color: $white;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  background-color: transparent;
+  height: 100px;
+  transform: translate(0%, 0%);
+  transition: all 0.4s ease;
+  nav {
+    height: 100px;
+  }
+  &.visible {
+    background-color: $primaryText;
+    height: 60px;
+    nav {
+      height: 60px;
+    }
+  }
+  &.hidden {
+    transform: translate(0%, -100%);
+    height: 60px;
+    nav {
+      height: 60px;
+    }
+  }
+  // &.initial {
+  //   background-color: transparent;
+  //   height: 100px;
+  //   nav {
+  //     height: 100px;
+  //   }
+  // }
+  &.inverse {
+    background-color: $primaryText;
+    height: 60px;
+    transform: translate(0%, 0%);
+    transition: transform 0.4s ease, height 0s, background-color 0s;
+    nav {
+      height: 60px;
+      transition: height 0s;
+    }
+  }
+}
+
+.navbar {
+  padding: 0.5rem 0rem;
+  transition: all 0.4s ease;
+}
+
+.navbar-brand {
+  color: $white;
+}
+
+.navbar-nav .nav-item .nav-link {
+  color: $white;
+  transition: color 0.3s;
+  padding-left: 0.7rem;
+  padding-right: 0.7rem;
+}
+
+.nav-item .nav-link .btn {
+  margin-top: 2px;
+}
+
+.nav-link:hover {
+  color: $bgWhite;
+}
+
+h1 {
+  font-family: "Julius Sans One", sans-serif;
+  font-size: 3rem;
+}
+
+h2 {
+  font-family: "Julius Sans One", sans-serif;
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-family: "Julius Sans One", sans-serif;
+  font-size: 1.8rem;
+}
+
+p,
+span {
+  font-family: "Crimson Text", serif;
+  line-height: 1.5;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.fs-l {
+  font-size: 1.2rem;
+}
+
+.text-black {
+  color: $primaryText;
+}
+
+.text-gray {
+  color: $secondaryText;
+}
+
+.italic {
+  font-style: italic;
+}
+
+a {
+  font-family: "Crimson Text", serif;
+}
+
+.btn {
+  font-family: "Julius Sans One", sans-serif;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: $primary;
+  color: $primaryText;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: darken($primary, 10%);
+  color: $primaryText;
+}
+
+.btn-secondary {
+  background-color: $secondary;
+  color: $white;
+  border: none;
+}
+
+.btn-secondary:hover {
+  background-color: lighten($secondary, 8%);
+  color: $white;
+}
+
+.default-background {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.medium-background {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg-filter {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.15);
+  z-index: 1;
+}
+
+.bg-title {
+  position: relative;
+  z-index: 2;
+}
+
+.bg-flag {
+  display: block !important;
+  width: 25px;
+  z-index: 5;
+  margin: 0rem auto 0.6rem auto;
+}
+
+/* Slider */
+
+.slide-bg-dark {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #dfdfdf;
+  opacity: 0.6;
+  transition: all 0.5s ease;
+  will-change: opacity, background-color;
+}
+
+.slider .gatsby-image-wrapper picture img {
+  will-change: transform, opacity;
+}
+
+.slider-index-0 {
+  .slide-0,
+  .slide-1,
+  .slide-2 {
+    .slide-bg-dark {
+      opacity: 0;
+    }
+  }
+  $i: 0;
+  @for $i from 0 through 2 {
+    .slide-#{$i}:hover .slide-bg-dark {
+      background-color: $primaryText;
+      opacity: 0.3;
+    }
+    .slide-#{$i}:hover .gatsby-image-wrapper img {
+      transform: scale(1.08, 1.08);
+    }
+  }
+}
+
+.slider-index-1 {
+  .slide-1,
+  .slide-2,
+  .slide-3 {
+    .slide-bg-dark {
+      opacity: 0;
+    }
+  }
+  $i: 1;
+  @for $i from 1 through 3 {
+    .slide-#{$i}:hover .slide-bg-dark {
+      background-color: $primaryText;
+      opacity: 0.3;
+    }
+    .slide-#{$i}:hover .gatsby-image-wrapper img {
+      transform: scale(1.08, 1.08);
+    }
+  }
+}
+
+.slider-index-2 {
+  .slide-2,
+  .slide-3,
+  .slide-4 {
+    .slide-bg-dark {
+      opacity: 0;
+    }
+  }
+  $i: 2;
+  @for $i from 2 through 4 {
+    .slide-#{$i}:hover .slide-bg-dark {
+      background-color: $primaryText;
+      opacity: 0.3;
+    }
+    .slide-#{$i}:hover .gatsby-image-wrapper img {
+      transform: scale(1.08, 1.08);
+    }
+  }
+}
+
+.slider-index-3 {
+  .slide-3,
+  .slide-4,
+  .slide-5 {
+    .slide-bg-dark {
+      opacity: 0;
+    }
+  }
+  $i: 3;
+  @for $i from 3 through 5 {
+    .slide-#{$i}:hover .slide-bg-dark {
+      background-color: $primaryText;
+      opacity: 0.3;
+    }
+    .slide-#{$i}:hover .gatsby-image-wrapper img {
+      transform: scale(1.08, 1.08);
+    }
+  }
+}
+
+/* Card body */
+
+.card--country {
+  border: none;
+}
+
+.card-body--special {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+  padding-left: 3rem;
+  height: 100%;
+}
+
+/* Destination */
+
+.gallery-section {
+  padding: 30vh 0rem 5rem 0rem;
+  .gallery {
+    margin-top: 15vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .gallery-item {
+      margin-bottom: 3rem;
+      width: 40%;
+      max-width: 500px;
+      align-self: center;
+    }
+    .gatsby-image-wrapper {
+      picture img {
+        height: auto;
+      }
+    }
+  }
+}

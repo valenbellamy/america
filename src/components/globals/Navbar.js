@@ -1,19 +1,64 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 
-export default function Navbar() {
+const Navbar = props => {
   const [navbarOpen, setNavbarOpen] = useState(false)
   const [navbarClass, setNavbarClass] = useState("collapse navbar-collapse")
+  const [prevScrollPos, setPrevScrollPos] = useState(0)
+  const [headerClass, setHeaderClass] = useState("")
+  const listener = e => {
+    const currentScrollPos = window.pageYOffset
+    const visible = prevScrollPos > currentScrollPos
+    setPrevScrollPos(currentScrollPos)
+    if (currentScrollPos < 50) {
+      setHeaderClass("")
+      if (props.inverse) {
+        setHeaderClass("inverse")
+      }
+    } else if (visible) {
+      setHeaderClass("visible")
+    } else {
+      setHeaderClass("hidden")
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", listener)
+    return () => {
+      window.removeEventListener("scroll", listener)
+    }
+  })
+
   const links = [
     {
       id: 1,
-      path: "/argentine",
+      path: "/blog/pays/argentine",
       text: "Argentine",
     },
     {
       id: 2,
-      path: "/chili",
+      path: "/blog/pays/chili",
       text: "Chili",
+    },
+    {
+      id: 3,
+      path: "/blog/pays/bolivie",
+      text: "Bolivie",
+    },
+    {
+      id: 4,
+      path: "/blog/pays/perou",
+      text: "Pérou",
+    },
+    {
+      id: 5,
+      path: "/blog/pays/equateur",
+      text: "Equateur",
+    },
+    {
+      id: 6,
+      path: "/blog/pays/colombie",
+      text: "Colombie",
     },
   ]
 
@@ -28,9 +73,9 @@ export default function Navbar() {
   }
 
   return (
-    <header>
-      <nav className="navbar navbar-expand-md navbar-dark">
-        <div className="container">
+    <header className={headerClass}>
+      <div className="container">
+        <nav className="navbar navbar-expand-md navbar-dark">
           <Link className="navbar-brand" to="/">
             Amerique du Sud
           </Link>
@@ -57,8 +102,10 @@ export default function Navbar() {
               </li>
             </ul>
           </div>
-        </div>
-      </nav>
+        </nav>
+      </div>
     </header>
   )
 }
+
+export default Navbar

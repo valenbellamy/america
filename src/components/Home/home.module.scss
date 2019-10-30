@@ -1,0 +1,31 @@
+.content-px {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+.special-gallery {
+  position: relative;
+  z-index: 3;
+}
+
+.bg-gallery {
+  opacity: 1;
+}
+
+.img-container {
+  position: relative;
+  margin-left: auto;
+  display: block;
+  width: 430px;
+  height: 630px;
+}
+
+.img-gradient {
+  position: absolute;
+  z-index: 1;
+  height: 450px;
+  width: 400px;
+  top: 180px;
+  left: 30px;
+  background-color: #adb5c7;
+}

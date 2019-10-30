@@ -1,0 +1,60 @@
+$primaryText: #070707;
+$secondary: #16a085;
+
+.slider {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.5, 0, 0.5, 1);
+  will-change: transform;
+}
+
+.slide {
+  position: relative;
+  margin-right: 1rem;
+  &:last-child {
+    margin-right: 0rem;
+  }
+}
+
+.slide-img {
+  width: 25vw;
+}
+
+.slide-title {
+  position: absolute;
+  bottom: 0.3rem;
+  left: 0.8rem;
+  color: #fefefe;
+  z-index: 3;
+  font-style: italic;
+}
+
+.nav-slider {
+  display: flex;
+  button {
+    width: 40px;
+    height: 40px;
+    background-color: $secondary;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+    will-change: opacity;
+    &:first-child {
+      margin-right: 0.5rem;
+    }
+    &:hover {
+      opacity: 1;
+    }
+    svg {
+      width: 16px;
+    }
+  }
+  button:disabled {
+    opacity: 0.15;
+    cursor: not-allowed;
+  }
+}
