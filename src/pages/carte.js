@@ -59,9 +59,12 @@ const Maps = ({ data }) => {
                     <p className="text-gray italic-crimson">
                       {edge.node.pays.title}
                     </p>
-                    <button className="btn btn-link btn-link-secondary">
+                    <Link
+                      to={`/blog/${edge.node.slug}`}
+                      className="btn btn-link btn-link-secondary"
+                    >
                       voir les photos
-                    </button>
+                    </Link>
                   </div>
                 </div>
               ))}

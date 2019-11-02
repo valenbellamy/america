@@ -5,7 +5,8 @@ const Navbar = props => {
   const [navbarOpen, setNavbarOpen] = useState(false)
   const [navbarClass, setNavbarClass] = useState("collapse navbar-collapse")
   const [prevScrollPos, setPrevScrollPos] = useState(0)
-  const [headerClass, setHeaderClass] = useState("")
+  const [headerClass, setHeaderClass] = useState(props.inverse ? "inverse" : "")
+
   const listener = e => {
     const currentScrollPos = window.pageYOffset
     const visible = prevScrollPos > currentScrollPos
@@ -76,7 +77,7 @@ const Navbar = props => {
     <header className={headerClass}>
       <div className="container">
         <nav className="navbar navbar-expand-md navbar-dark">
-          <Link className="navbar-brand" to="/">
+          <Link className="navbar-brand italic" to="/">
             Amerique du Sud
           </Link>
           <button

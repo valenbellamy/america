@@ -95,8 +95,10 @@ header {
   padding-right: 0.7rem;
 }
 
-.nav-item .nav-link .btn {
-  margin-top: 2px;
+.nav-item {
+  .btn {
+    margin-top: 2px;
+  }
 }
 
 .nav-link:hover {
@@ -167,12 +169,18 @@ a {
   border: none;
 }
 
-.btn-primary:hover {
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary:not(:disabled):not(.disabled):active {
   background-color: darken($primary, 10%);
   color: $primaryText;
 }
 
-.btn-secondary {
+.btn-secondary,
+.btn-secondary:focus,
+.btn-secondary:active,
+.btn-secondary:not(:disabled):not(.disabled):active {
   background-color: $secondary;
   color: $white;
   border: none;
