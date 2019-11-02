@@ -81,6 +81,7 @@ const Navbar = props => {
             Amerique du Sud
           </Link>
           <button
+            id="toggle navbar"
             className="navbar-toggler"
             type="button"
             onClick={navbarHandler}

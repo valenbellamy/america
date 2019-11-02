@@ -33,6 +33,7 @@ const Slider = () => {
           <h2 className="text-black mbl">nos destinations</h2>
           <div className={sliderStyles.navSlider}>
             <button
+              id="Suivant"
               type="button"
               disabled={indexSlide === 3 ? true : false}
               onClick={() => {
@@ -53,6 +54,7 @@ const Slider = () => {
               </svg>
             </button>
             <button
+              id="Précédent"
               type="button"
               disabled={indexSlide === 0 ? true : false}
               onClick={() => {
