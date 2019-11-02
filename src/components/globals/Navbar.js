@@ -83,6 +83,7 @@ const Navbar = props => {
           <button
             id="toggle navbar"
             className="navbar-toggler"
+            name="toggle navbar"
             type="button"
             onClick={navbarHandler}
           >
