@@ -26,7 +26,6 @@ const Maps = ({ data }) => {
       transitionDuration: 1000,
     })
   }
-  console.log(data)
   return (
     <Layout>
       <SEO title="Carte des destinations" />

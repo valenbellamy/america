@@ -33,6 +33,7 @@ const Slider = () => {
           <h2 className="text-black mbl">nos destinations</h2>
           <div className={sliderStyles.navSlider}>
             <button
+              type="button"
               disabled={indexSlide === 3 ? true : false}
               onClick={() => {
                 setIndexSlide(indexSlide + 1)
@@ -52,6 +53,7 @@ const Slider = () => {
               </svg>
             </button>
             <button
+              type="button"
               disabled={indexSlide === 0 ? true : false}
               onClick={() => {
                 setIndexSlide(indexSlide - 1)
