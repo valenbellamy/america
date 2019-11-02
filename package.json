@@ -21,7 +21,8 @@
     "prop-types": "^15.7.2",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "react-map-gl": "^5.1.1"
   },
   "devDependencies": {
     "env-cmd": "^10.0.1",
@@ -33,7 +34,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "env-cmd -f .env gatsby develop",
+    "develop": "env-cmd -f .env.development gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
