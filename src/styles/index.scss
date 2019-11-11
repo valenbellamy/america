@@ -398,7 +398,18 @@ a {
 $i: 0;
 @for $i from 0 through 5 {
   .slider-index-#{$i} {
-    .slide-#{$i} {
+    // .slide-#{$i} {
+    //   .slide-bg-dark {
+    //     opacity: 0;
+    //   }
+    // }
+    .slide-0,
+    .slide-1,
+    .slide-2,
+    .slide-3,
+    .slide-4,
+    .slide-5,
+    .slide-6 {
       .slide-bg-dark {
         opacity: 0;
       }

@@ -5,6 +5,9 @@ $secondary: #16a085;
   display: flex;
   transition: transform 0.5s cubic-bezier(0.5, 0, 0.5, 1);
   will-change: transform;
+  @media (max-width: 576px) {
+    overflow-x: scroll;
+  }
 }
 
 .slide {
@@ -69,15 +72,6 @@ $secondary: #16a085;
     cursor: not-allowed;
   }
   @media (max-width: 576px) {
-    button {
-      width: 30px;
-      height: 30px;
-      &:first-child {
-        margin-right: 1rem;
-      }
-      svg {
-        width: 14px;
-      }
-    }
+    display: none;
   }
 }

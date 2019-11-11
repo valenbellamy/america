@@ -15,9 +15,9 @@ export default function BackgroundSection({
     >
       <div className="bg-filter"></div>
 
-      <div>
+      <div className="container">
         {children}
-        <h1 className="bg-title text-white">{title}</h1>
+        <h1 className="bg-title text-white text-center">{title}</h1>
       </div>
     </BackgroundImage>
   )
