@@ -88,6 +88,14 @@ header {
   color: $white;
 }
 
+.navbar-brand svg {
+  width: 40px;
+}
+
+.navbar-brand svg path {
+  fill: $white;
+}
+
 .navbar-nav .nav-item .nav-link {
   color: $white;
   transition: color 0.3s;

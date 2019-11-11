@@ -35,7 +35,7 @@ const Slider = () => {
             <button
               id="Suivant"
               type="button"
-              name="Suivant"
+              aria-label="Suivant"
               disabled={indexSlide === 3 ? true : false}
               onClick={() => {
                 setIndexSlide(indexSlide + 1)
@@ -57,7 +57,7 @@ const Slider = () => {
             <button
               id="Précédent"
               type="button"
-              name="Précédent"
+              aria-label="Précédent"
               disabled={indexSlide === 0 ? true : false}
               onClick={() => {
                 setIndexSlide(indexSlide - 1)
