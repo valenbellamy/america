@@ -9,14 +9,24 @@ $secondary: #16a085;
 
 .slide {
   position: relative;
-  margin-right: 1rem;
+  margin-right: 1vw;
   &:last-child {
-    margin-right: 0rem;
+    margin-right: 0vw;
+  }
+  @media (max-width: 768px) {
+    margin-right: 2vw;
   }
 }
 
 .slide-img {
   width: 25vw;
+  border-radius: 6px;
+  @media (max-width: 768px) {
+    width: 36vw;
+  }
+  @media (max-width: 576px) {
+    width: 80vw;
+  }
 }
 
 .slide-title {
@@ -26,6 +36,7 @@ $secondary: #16a085;
   color: #fefefe;
   z-index: 3;
   font-style: italic;
+  font-family: "Crimson Text";
 }
 
 .nav-slider {
@@ -56,5 +67,17 @@ $secondary: #16a085;
   button:disabled {
     opacity: 0.15;
     cursor: not-allowed;
+  }
+  @media (max-width: 576px) {
+    button {
+      width: 30px;
+      height: 30px;
+      &:first-child {
+        margin-right: 1rem;
+      }
+      svg {
+        width: 14px;
+      }
+    }
   }
 }

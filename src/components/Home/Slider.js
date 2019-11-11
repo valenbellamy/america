@@ -1,13 +1,36 @@
-import React, { useState } from "react"
+import React, { useLayoutEffect, useState } from "react"
 import { Link, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import sliderStyles from "./slider.module.scss"
 
 const Slider = () => {
   const [indexSlide, setIndexSlide] = useState(0)
-  const wrapperTransform = {
-    transform: `translateX(-${indexSlide * 26}vw)`,
+  const [translateValue, setTranslateValue] = useState(0)
+  const [visibleItems, setVisibleItems] = useState(0)
+
+  useLayoutEffect(() => {
+    updateSliderVariables()
+    window.addEventListener("resize", updateSliderVariables)
+    return () => window.removeEventListener("resize", updateSliderVariables)
+  }, [])
+
+  const updateSliderVariables = () => {
+    if (window.innerWidth > 769) {
+      setTranslateValue(26)
+      setVisibleItems(3)
+    } else if (window.innerWidth >= 576 && window.innerWidth < 769) {
+      setTranslateValue(38)
+      setVisibleItems(2)
+    } else {
+      setTranslateValue(82)
+      setVisibleItems(1)
+    }
   }
+
+  const wrapperTransform = {
+    transform: `translateX(-${indexSlide * translateValue}vw)`,
+  }
+
   const data = useStaticQuery(graphql`
     query {
       allContentfulPays(sort: { fields: createdAt, order: ASC }) {
@@ -27,7 +50,7 @@ const Slider = () => {
     }
   `)
   return (
-    <section className="slider pyl bg-grey">
+    <section className="slider-section pyl bg-grey">
       <div className="container">
         <div className="d-flex justify-content-between">
           <h2 className="text-black mbl">nos destinations</h2>
@@ -36,9 +59,10 @@ const Slider = () => {
               id="Suivant"
               type="button"
               aria-label="Suivant"
-              disabled={indexSlide === 3 ? true : false}
+              disabled={indexSlide === 6 - visibleItems ? true : false}
               onClick={() => {
                 setIndexSlide(indexSlide + 1)
+                updateSliderVariables()
               }}
             >
               <svg
@@ -61,6 +85,7 @@ const Slider = () => {
               disabled={indexSlide === 0 ? true : false}
               onClick={() => {
                 setIndexSlide(indexSlide - 1)
+                updateSliderVariables()
               }}
             >
               <svg

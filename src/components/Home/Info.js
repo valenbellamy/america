@@ -9,8 +9,8 @@ const Info = ({ data }) => (
       query {
         imageOne: file(relativePath: { eq: "img-right.jpg" }) {
           childImageSharp {
-            fixed(width: 400) {
-              ...GatsbyImageSharpFixed
+            fluid(maxWidth: 400) {
+              ...GatsbyImageSharpFluid
             }
           }
         }
@@ -18,13 +18,13 @@ const Info = ({ data }) => (
     `}
     render={data => {
       // Set ImageData.
-      const imageOne = data.imageOne.childImageSharp.fixed
+      const imageOne = data.imageOne.childImageSharp.fluid
       return (
         <Fragment>
           <section className="pyl">
             <div className="container">
               <div className="row align-items-center">
-                <div className="col-md-6">
+                <div className="col-lg-6">
                   <div className={homeStyles.contentPx}>
                     <h2 className="text-black mb-5">à propos</h2>
                     <p className="text-gray mb-2">
@@ -39,12 +39,12 @@ const Info = ({ data }) => (
                     </p>
                   </div>
                 </div>
-                <div className={`col-md-6`}>
+                <div className="col-lg-6">
                   <div className={homeStyles.imgContainer}>
                     <Img
                       className={homeStyles.specialGallery}
                       placeholderClassName={homeStyles.bgGallery}
-                      fixed={imageOne}
+                      fluid={imageOne}
                       backgroundColor={`#ADB5C7`}
                       style={{ display: "block" }}
                     />
