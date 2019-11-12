@@ -1,12 +1,36 @@
-import React, { useLayoutEffect, useState } from "react"
+import React, { useLayoutEffect, useEffect, useState } from "react"
 import { Link, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import sliderStyles from "./slider.module.scss"
+import useOnScreen from "../Hooks/useOnScreen"
+import anime from "animejs/lib/anime.es.js"
 
 const Slider = () => {
   const [indexSlide, setIndexSlide] = useState(0)
   const [translateValue, setTranslateValue] = useState(0)
   const [visibleItems, setVisibleItems] = useState(0)
+
+  const [setRef, visible] = useOnScreen({ threshold: 0 })
+  const [alreadyVisible, setAlreadyVisible] = useState(false)
+
+  useEffect(() => {
+    if (visible && !alreadyVisible) {
+      animRef()
+    }
+  }, [visible])
+
+  const animRef = () => {
+    setAlreadyVisible(true)
+    anime({
+      targets: ".anime-title-2 .anime-word",
+      translateY: [40, 0],
+      translateZ: 0,
+      opacity: [0, 1],
+      easing: "easeOutExpo",
+      duration: 1200,
+      delay: (el, i) => 200 + 100 * i,
+    })
+  }
 
   useLayoutEffect(() => {
     updateSliderVariables()
@@ -53,7 +77,10 @@ const Slider = () => {
     <section className="slider-section pyl bg-grey">
       <div className="container">
         <div className="d-flex justify-content-between">
-          <h2 className="text-black mbl">nos destinations</h2>
+          <h2 className="text-black mbl anime-title-2" ref={setRef}>
+            <span className="anime-word">nos</span>
+            <span className="anime-word">destinations</span>
+          </h2>
           <div className={sliderStyles.navSlider}>
             <button
               id="Suivant"

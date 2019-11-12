@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "animejs": "^3.1.0",
     "gatsby": "^2.16.1",
     "gatsby-background-image": "^0.8.15",
     "gatsby-image": "^2.2.29",
@@ -17,6 +18,7 @@
     "gatsby-source-contentful": "^2.1.50",
     "gatsby-source-filesystem": "^2.1.33",
     "gatsby-transformer-sharp": "^2.2.23",
+    "gsap": "^3.0.1",
     "node-sass": "^4.12.0",
     "prop-types": "^15.7.2",
     "react": "^16.10.2",
