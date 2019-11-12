@@ -1,10 +1,11 @@
-import React from "react"
+import React, { useEffect, useRef } from "react"
 import { graphql, Link } from "gatsby"
 import BackgroundSection from "../components/globals/BackgroundSection"
 import Navbar from "../components/globals/Navbar"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import anime from "animejs/lib/anime.es.js"
 
 export const query = graphql`
   query($slug: String!, $title: String!) {
@@ -42,6 +43,28 @@ export const query = graphql`
 `
 
 const Country = ({ data }) => {
+  let itemsRef = useRef(null)
+  let flagRef = useRef(null)
+
+  useEffect(() => {
+    anime({
+      targets: ".anime-col",
+      translateY: [80, 0],
+      translateZ: 0,
+      opacity: [0, 1],
+      easing: "easeOutExpo",
+      duration: 1200,
+      delay: (el, i) => 200 + 30 * i,
+    })
+    anime({
+      targets: ".anime-flag",
+      opacity: [0, 1],
+      easing: "easeOutExpo",
+      duration: 800,
+      delay: (el, i) => 600 + 30 * i,
+    })
+  }, [])
+
   return (
     <Layout>
       <Navbar inverse={false} />
@@ -52,18 +75,26 @@ const Country = ({ data }) => {
         styleClass="medium-background"
         children={
           <Img
-            className={"bg-flag"}
+            className={"bg-flag anime-flag"}
             fixed={data.contentfulPays.drapeau.fixed}
             backgroundColor={`#040e18`}
+            ref={element => {
+              flagRef = element
+            }}
           />
         }
       />
       <section className="bg-grey pyl">
         <div className="container">
-          <div className="row">
+          <div
+            className="row"
+            ref={element => {
+              itemsRef = element
+            }}
+          >
             {data.allContentfulDestination.edges.length !== 0 ? (
               data.allContentfulDestination.edges.map(edge => (
-                <div className="col-10 mx-auto" key={edge.node.id}>
+                <div className="col-10 mx-auto anime-col" key={edge.node.id}>
                   <div className="card card--country mb-3">
                     <div className="row no-gutters">
                       <div className="col-md-6">

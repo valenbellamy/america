@@ -324,23 +324,14 @@ a {
 
 $i: 0;
 @for $i from 0 through 5 {
+  @media (max-width: 576px) {
+    .slide-#{$i} {
+      .slide-bg-dark {
+        opacity: 0;
+      }
+    }
+  }
   .slider-index-#{$i} {
-    // .slide-#{$i} {
-    //   .slide-bg-dark {
-    //     opacity: 0;
-    //   }
-    // }
-    // .slide-0,
-    // .slide-1,
-    // .slide-2,
-    // .slide-3,
-    // .slide-4,
-    // .slide-5,
-    // .slide-6 {
-    //   .slide-bg-dark {
-    //     opacity: 0;
-    //   }
-    // }
     @media (min-width: 576px) {
       .slide-#{$i},
       .slide-#{$i + 1} {
@@ -383,6 +374,14 @@ $i: 0;
 
 /* Card body */
 
+.anime-flag {
+  opacity: 0;
+}
+
+.anime-col {
+  opacity: 0;
+}
+
 .card--country {
   border: none;
 }
@@ -391,7 +390,7 @@ $i: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-end;
+  align-items: flex-start;
   padding-left: 3rem;
   height: 100%;
 }
@@ -464,14 +463,6 @@ $i: 0;
   padding: 2rem 1rem;
 }
 
-.media {
-  background-color: $bgWhite;
-  padding: 1rem;
-  border-radius: 6px;
-  margin-bottom: 1rem;
-  border: none;
-}
-
 .btn--marker {
   border: none;
   cursor: pointer;
@@ -484,6 +475,18 @@ $i: 0;
 
 .btn--marker:focus {
   outline: 0;
+}
+
+.media {
+  background-color: $bgWhite;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  border: none;
+}
+
+.anime-media {
+  opacity: 0;
 }
 
 .media {

@@ -1,11 +1,13 @@
-import React, { useState } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import ReactMapGL, { Marker, Popup, FlyToInterpolator } from "react-map-gl"
 import Img from "gatsby-image"
+import anime from "animejs/lib/anime.es.js"
 
 const Maps = ({ data }) => {
+  let itemsRef = useRef(null)
   const [viewport, setViewport] = useState({
     longitude: -56.097893,
     latitude: -15.601411,
@@ -15,6 +17,16 @@ const Maps = ({ data }) => {
   })
   const [currentIndex, setCurrentIndex] = useState(0)
   const [selectedCity, setSelectedCity] = useState(null)
+
+  useEffect(() => {
+    anime({
+      targets: ".anime-media",
+      opacity: [0, 1],
+      easing: "easeOutExpo",
+      duration: 1000,
+      delay: (el, i) => 400 + 100 * i,
+    })
+  }, [])
 
   const centerMap = edge => {
     setSelectedCity(edge)
@@ -32,13 +44,18 @@ const Maps = ({ data }) => {
       <div className="gallery-wrapper">
         <div className="flexbox-row">
           <div className="flexbox-item item-cities">
-            <div className="cities">
+            <div
+              className="cities"
+              ref={element => {
+                itemsRef = element
+              }}
+            >
               <Link className="btn btn-secondary mbm" to="/">
                 Retour
               </Link>
               {data.allContentfulDestination.edges.map(edge => (
                 <div
-                  className="media"
+                  className="media anime-media"
                   key={edge.node.id}
                   onMouseOver={() => {
                     if (currentIndex !== edge.node.id) {
