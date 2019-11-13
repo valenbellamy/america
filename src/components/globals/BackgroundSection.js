@@ -6,20 +6,21 @@ const BackgroundSection = ({ img, styleClass, title, children }) => {
   let titleRef = useRef(null)
 
   useEffect(() => {
-    titleRef.innerHTML = titleRef.textContent.replace(
-      /\S/g,
-      "<span class='letter'>$&</span>"
-    )
-
-    anime({
-      targets: ".letter",
-      translateY: [40, 0],
-      translateZ: 0,
-      opacity: [0, 1],
-      easing: "easeOutExpo",
-      duration: 1200,
-      delay: (el, i) => 200 + 30 * i,
-    })
+    if (window.innerWidth > 576) {
+      titleRef.innerHTML = titleRef.textContent.replace(
+        /\S/g,
+        "<span class='letter'>$&</span>"
+      )
+      anime({
+        targets: ".letter",
+        translateY: [40, 0],
+        translateZ: 0,
+        opacity: [0, 1],
+        easing: "easeOutExpo",
+        duration: 1200,
+        delay: (el, i) => 200 + 30 * i,
+      })
+    }
   }, [])
 
   return (
@@ -33,7 +34,7 @@ const BackgroundSection = ({ img, styleClass, title, children }) => {
       <div className="container">
         {children}
         <h1
-          className="bg-title text-white text-center"
+          className="bg-title anime-title text-white text-center"
           ref={element => {
             titleRef = element
           }}

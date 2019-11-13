@@ -1,7 +1,7 @@
 .content-px {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
-  @media (max-width: 768px) {
+  @media (max-width: 767.98px) {
     padding: 0rem;
   }
 }
@@ -25,7 +25,7 @@
   @media (max-width: 1090px) {
     margin-right: auto;
   }
-  @media (max-width: 576px) {
+  @media (max-width: 575.98px) {
     width: 100%;
     height: auto;
   }
@@ -39,7 +39,7 @@
   top: 180px;
   left: 30px;
   background-color: #adb5c7;
-  @media (max-width: 768px) {
+  @media (max-width: 767.98px) {
     display: none;
   }
 }

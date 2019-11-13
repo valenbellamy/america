@@ -47,22 +47,24 @@ const Country = ({ data }) => {
   let flagRef = useRef(null)
 
   useEffect(() => {
-    anime({
-      targets: ".anime-col",
-      translateY: [80, 0],
-      translateZ: 0,
-      opacity: [0, 1],
-      easing: "easeOutExpo",
-      duration: 1200,
-      delay: (el, i) => 200 + 30 * i,
-    })
-    anime({
-      targets: ".anime-flag",
-      opacity: [0, 1],
-      easing: "easeOutExpo",
-      duration: 800,
-      delay: (el, i) => 600 + 30 * i,
-    })
+    if (window.innerWidth > 576) {
+      anime({
+        targets: ".anime-col",
+        translateY: [80, 0],
+        translateZ: 0,
+        opacity: [0, 1],
+        easing: "easeOutExpo",
+        duration: 1200,
+        delay: (el, i) => 200 + 30 * i,
+      })
+      anime({
+        targets: ".anime-flag",
+        opacity: [0, 1],
+        easing: "easeOutExpo",
+        duration: 800,
+        delay: (el, i) => 600 + 30 * i,
+      })
+    }
   }, [])
 
   return (

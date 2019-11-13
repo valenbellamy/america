@@ -22,8 +22,10 @@ const Info = () => {
   const [alreadyVisible, setAlreadyVisible] = useState(false)
 
   useEffect(() => {
-    if (visible && !alreadyVisible) {
-      animRef()
+    if (window.innerWidth > 576) {
+      if (visible && !alreadyVisible) {
+        animRef()
+      }
     }
   }, [visible])
 
@@ -61,7 +63,7 @@ const Info = () => {
           <div className="row align-items-center">
             <div className="col-lg-6">
               <div className={homeStyles.contentPx} ref={setRef}>
-                <h2 className="text-black mb-5 anime-title-1">
+                <h2 className="text-black mbl anime-title-1">
                   <span className="anime-word">à</span>
                   <span className="anime-word">propos</span>
                 </h2>
@@ -85,6 +87,7 @@ const Info = () => {
                   fluid={data.imageOne.childImageSharp.fluid}
                   backgroundColor={`#ADB5C7`}
                   style={{ display: "block" }}
+                  alt="Photo du Machu Picchu"
                 />
                 <div className={homeStyles.imgGradient}></div>
               </div>
@@ -95,25 +98,5 @@ const Info = () => {
     </Fragment>
   )
 }
-// <StaticQuery
-//   query={graphql`
-//     query {
-//       imageOne: file(relativePath: { eq: "img-right.jpg" }) {
-//         childImageSharp {
-//           fluid(maxWidth: 400) {
-//             ...GatsbyImageSharpFluid
-//           }
-//         }
-//       }
-//     }
-//   `}
-//   render={data => {
-//     // Set ImageData.
-//     const imageOne = data.imageOne.childImageSharp.fluid
-//     return (
-
-//     )
-//   }}
-// />
 
 export default Info

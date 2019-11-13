@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 const Navbar = props => {
   const [navbarOpen, setNavbarOpen] = useState(false)
-  const [navbarClass, setNavbarClass] = useState("collapse navbar-collapse")
+  const [navbarClass, setNavbarClass] = useState("navbar-collapse")
   const [prevScrollPos, setPrevScrollPos] = useState(0)
   const [headerClass, setHeaderClass] = useState(props.inverse ? "inverse" : "")
 
@@ -66,10 +66,10 @@ const Navbar = props => {
   const navbarHandler = () => {
     if (navbarOpen) {
       setNavbarOpen(false)
-      setNavbarClass("collapse navbar-collapse")
+      setNavbarClass("navbar-collapse")
     } else {
       setNavbarOpen(true)
-      setNavbarClass("collapse navbar-collapse show")
+      setNavbarClass("navbar-collapse show")
     }
   }
 
@@ -101,7 +101,7 @@ const Navbar = props => {
                 </li>
               ))}
               <li className="nav-item">
-                <Link className="ml-4 btn btn-primary" to="/carte">
+                <Link className="btn btn-primary" to="/carte">
                   Voir la carte
                 </Link>
               </li>

@@ -5,7 +5,7 @@ $secondary: #16a085;
   display: flex;
   transition: transform 0.5s cubic-bezier(0.5, 0, 0.5, 1);
   will-change: transform;
-  @media (max-width: 576px) {
+  @media (max-width: 575.98px) {
     overflow-x: scroll;
   }
 }
@@ -16,7 +16,7 @@ $secondary: #16a085;
   &:last-child {
     margin-right: 0vw;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 767.98px) {
     margin-right: 2vw;
   }
 }
@@ -24,10 +24,10 @@ $secondary: #16a085;
 .slide-img {
   width: 25vw;
   border-radius: 6px;
-  @media (max-width: 768px) {
+  @media (max-width: 767.98px) {
     width: 36vw;
   }
-  @media (max-width: 576px) {
+  @media (max-width: 575.98px) {
     width: 80vw;
   }
 }
@@ -72,7 +72,7 @@ $secondary: #16a085;
     opacity: 0.15;
     cursor: not-allowed;
   }
-  @media (max-width: 576px) {
+  @media (max-width: 575.98px) {
     display: none;
   }
 }

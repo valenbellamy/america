@@ -19,13 +19,15 @@ const Maps = ({ data }) => {
   const [selectedCity, setSelectedCity] = useState(null)
 
   useEffect(() => {
-    anime({
-      targets: ".anime-media",
-      opacity: [0, 1],
-      easing: "easeOutExpo",
-      duration: 1000,
-      delay: (el, i) => 400 + 100 * i,
-    })
+    if (window.innerWidth > 576) {
+      anime({
+        targets: ".anime-media",
+        opacity: [0, 1],
+        easing: "easeOutExpo",
+        duration: 1000,
+        delay: (el, i) => 400 + 100 * i,
+      })
+    }
   }, [])
 
   useLayoutEffect(() => {
