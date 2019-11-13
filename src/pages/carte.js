@@ -31,10 +31,10 @@ const Maps = ({ data }) => {
   useLayoutEffect(() => {
     function updateSize() {
       setViewport({
-        longitude: -56.097893,
-        latitude: -25.901411,
+        longitude: -60.097893,
+        latitude: -30.901411,
         width: "100vw",
-        height: "75vh",
+        height: window.innerHeight - 168,
         zoom: 2,
       })
     }
