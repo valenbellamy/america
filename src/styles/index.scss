@@ -384,6 +384,18 @@ $i: 0;
 
 .card--country {
   border: none;
+  border-radius: 6px;
+  .gatsby-image-wrapper {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+  }
+  @media (max-width: 992px) {
+    .gatsby-image-wrapper {
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+      border-bottom-left-radius: 0px;
+    }
+  }
 }
 
 .card-body--special {
@@ -393,6 +405,14 @@ $i: 0;
   align-items: flex-start;
   padding-left: 3rem;
   height: 100%;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  @media (max-width: 992px) {
+    padding-left: 1rem;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+  }
 }
 
 /* Destination */
@@ -434,24 +454,42 @@ $i: 0;
 .item-map {
   flex: 1 1 auto;
   width: 70%;
+  @media (max-width: 992px) {
+    width: 100%;
+    height: 75vh;
+    order: 1;
+  }
 }
 
 .item-cities {
   width: 30%;
+  @media (max-width: 992px) {
+    width: 100%;
+    height: 10.5rem;
+    order: 2;
+  }
 }
 
 .gallery-wrapper {
   position: fixed;
   width: 100%;
   height: 100vh;
-  /*padding-top: 60px height of the header*/
+  .btn-fixed {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 10;
+  }
 }
 
-.flexbox-row {
+.flexbox-container {
   display: flex;
   flex-direction: row;
   height: 100vh;
   max-height: 100%;
+  @media (max-width: 992px) {
+    flex-direction: column;
+  }
 }
 
 .cities {
@@ -460,7 +498,14 @@ $i: 0;
   z-index: 1;
   overflow-y: auto;
   height: 100%;
-  padding: 2rem 1rem;
+  padding: 4.25rem 1rem 2rem 1rem;
+  @media (max-width: 992px) {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding: 1rem 2rem 1rem 1rem;
+  }
 }
 
 .btn--marker {
@@ -483,17 +528,18 @@ $i: 0;
   border-radius: 6px;
   margin-bottom: 1rem;
   border: none;
-}
-
-.anime-media {
-  opacity: 0;
-}
-
-.media {
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   will-change: background-color, box-shadow;
   background-color: $white;
   box-shadow: none;
+  @media (max-width: 992px) {
+    height: 8.5rem;
+    margin-right: 1rem;
+  }
+}
+
+.anime-media {
+  opacity: 0;
 }
 
 .media:hover {
@@ -506,6 +552,9 @@ $i: 0;
 
 .media-body {
   padding-left: 1rem;
+  @media (max-width: 992px) {
+    width: 200px;
+  }
 }
 
 .mapboxgl-popup-content {

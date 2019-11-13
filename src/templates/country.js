@@ -94,16 +94,19 @@ const Country = ({ data }) => {
           >
             {data.allContentfulDestination.edges.length !== 0 ? (
               data.allContentfulDestination.edges.map(edge => (
-                <div className="col-10 mx-auto anime-col" key={edge.node.id}>
-                  <div className="card card--country mb-3">
+                <div
+                  className="col-lg-10 col-md-6 col-xs-12 mx-auto anime-col"
+                  key={edge.node.id}
+                >
+                  <div className="card card--country mb-4">
                     <div className="row no-gutters">
-                      <div className="col-md-6">
+                      <div className="col-lg-6">
                         <Img
                           fluid={edge.node.cover.fluid}
                           backgroundColor={`#040e18`}
                         />
                       </div>
-                      <div className="col-md-6">
+                      <div className="col-lg-6">
                         <div className="card-body card-body--special bg-white">
                           <h3 className="text-black mbs">{edge.node.title}</h3>
                           <p className="text-gray mbm">

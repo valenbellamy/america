@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react"
+import React, { useState, useEffect, useLayoutEffect, useRef } from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -28,6 +28,23 @@ const Maps = ({ data }) => {
     })
   }, [])
 
+  useLayoutEffect(() => {
+    function updateSize() {
+      setViewport({
+        longitude: -56.097893,
+        latitude: -25.901411,
+        width: "100vw",
+        height: "75vh",
+        zoom: 2,
+      })
+    }
+    window.addEventListener("resize", updateSize)
+    if (window.innerWidth < 992) {
+      updateSize()
+    }
+    return () => window.removeEventListener("resize", updateSize)
+  }, [])
+
   const centerMap = edge => {
     setSelectedCity(edge)
     setViewport({
@@ -42,7 +59,10 @@ const Maps = ({ data }) => {
     <Layout>
       <SEO title="Carte des destinations" />
       <div className="gallery-wrapper">
-        <div className="flexbox-row">
+        <Link className="btn btn-secondary btn-fixed mbm" to="/">
+          Retour
+        </Link>
+        <div className="flexbox-container">
           <div className="flexbox-item item-cities">
             <div
               className="cities"
@@ -50,9 +70,6 @@ const Maps = ({ data }) => {
                 itemsRef = element
               }}
             >
-              <Link className="btn btn-secondary mbm" to="/">
-                Retour
-              </Link>
               {data.allContentfulDestination.edges.map(edge => (
                 <div
                   className="media anime-media"

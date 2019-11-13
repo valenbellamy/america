@@ -32,27 +32,6 @@ export const query = graphql`
         }
       }
     }
-    imageOne: file(relativePath: { eq: "slider-1.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 400) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    imageTwo: file(relativePath: { eq: "slider-2.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 400) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    imageThree: file(relativePath: { eq: "slider-3.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 400) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
   }
 `
 
