@@ -34,7 +34,7 @@ const Maps = ({ data }) => {
         longitude: -60.097893,
         latitude: -30.901411,
         width: "100vw",
-        height: window.innerHeight - 168,
+        height: window.innerHeight - 200,
         zoom: 2,
       })
     }
