@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react"
 import BackgroundImage from "gatsby-background-image"
 import anime from "animejs/lib/anime.es.js"
 
-const BackgroundSection = ({ img, styleClass, title, children }) => {
+const BackgroundSection = ({ img, styleClass, title, children, delay }) => {
   let titleRef = useRef(null)
 
   useEffect(() => {
@@ -19,15 +19,18 @@ const BackgroundSection = ({ img, styleClass, title, children }) => {
           easing: "easeOutExpo",
           duration: 0,
         })
-        .add({
-          targets: ".letter",
-          translateY: [40, 0],
-          translateZ: 0,
-          opacity: [0, 1],
-          easing: "easeOutExpo",
-          duration: 1200,
-          delay: (el, i) => 200 + 30 * i,
-        })
+        .add(
+          {
+            targets: ".letter",
+            translateY: [40, 0],
+            translateZ: 0,
+            opacity: [0, 1],
+            easing: "easeOutExpo",
+            duration: 1200,
+            delay: (el, i) => 200 + 30 * i,
+          },
+          delay ? delay : 0
+        )
     }
   }, [])
 
