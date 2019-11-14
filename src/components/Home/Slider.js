@@ -14,8 +14,10 @@ const Slider = () => {
   const [alreadyVisible, setAlreadyVisible] = useState(false)
 
   useEffect(() => {
-    if (visible && !alreadyVisible) {
-      animRef()
+    if (window.innerWidth > 576) {
+      if (visible && !alreadyVisible) {
+        animRef()
+      }
     }
   }, [visible])
 

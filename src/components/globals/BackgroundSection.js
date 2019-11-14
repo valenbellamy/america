@@ -11,15 +11,23 @@ const BackgroundSection = ({ img, styleClass, title, children }) => {
         /\S/g,
         "<span class='letter'>$&</span>"
       )
-      anime({
-        targets: ".letter",
-        translateY: [40, 0],
-        translateZ: 0,
-        opacity: [0, 1],
-        easing: "easeOutExpo",
-        duration: 1200,
-        delay: (el, i) => 200 + 30 * i,
-      })
+      anime
+        .timeline()
+        .add({
+          targets: ".anime-title",
+          opacity: [0, 1],
+          easing: "easeOutExpo",
+          duration: 0,
+        })
+        .add({
+          targets: ".letter",
+          translateY: [40, 0],
+          translateZ: 0,
+          opacity: [0, 1],
+          easing: "easeOutExpo",
+          duration: 1200,
+          delay: (el, i) => 200 + 30 * i,
+        })
     }
   }, [])
 
