@@ -15,9 +15,7 @@ export const query = graphql`
           id
           title
           slug
-          description {
-            description
-          }
+          introduction
           cover {
             fluid {
               ...GatsbyContentfulFluid
@@ -55,17 +53,18 @@ const Country = ({ data }) => {
         opacity: [0, 1],
         easing: "easeOutExpo",
         duration: 1200,
-        delay: (el, i) => 200 + 30 * i,
+        delay: (el, i) => 0 + 30 * i,
       })
       anime({
         targets: ".anime-flag",
         opacity: [0, 1],
         easing: "easeOutExpo",
         duration: 800,
-        delay: (el, i) => 600 + 30 * i,
+        delay: (el, i) => 400 + 30 * i,
       })
     }
   }, [])
+  console.log(data)
 
   return (
     <Layout>
@@ -112,7 +111,7 @@ const Country = ({ data }) => {
                         <div className="card-body card-body--special bg-white">
                           <h3 className="text-black mbs">{edge.node.title}</h3>
                           <p className="text-gray mbm">
-                            {edge.node.description.description}
+                            {edge.node.introduction}
                           </p>
                           <Link
                             to={`/blog/${edge.node.slug}`}

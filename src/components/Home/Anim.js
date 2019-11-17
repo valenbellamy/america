@@ -16,7 +16,7 @@ const Anim = () => {
             },
           ],
           easing: "easeInQuart",
-          duration: 800,
+          duration: 600,
           loop: false,
         })
         .add({
@@ -27,7 +27,7 @@ const Anim = () => {
             },
           ],
           easing: "easeOutQuart",
-          duration: 800,
+          duration: 600,
           loop: false,
         })
     } else {
@@ -41,7 +41,7 @@ const Anim = () => {
             },
           ],
           easing: "easeInQuart",
-          duration: 800,
+          duration: 600,
           loop: false,
         })
         .add({
@@ -52,7 +52,7 @@ const Anim = () => {
             },
           ],
           easing: "easeOutQuart",
-          duration: 800,
+          duration: 600,
           loop: false,
         })
     }
@@ -61,7 +61,7 @@ const Anim = () => {
       targets: ".morph-wrapper",
       translateY: "-100%",
       duration: 10,
-      delay: 1600,
+      delay: 1200,
     })
   }, [])
   return (

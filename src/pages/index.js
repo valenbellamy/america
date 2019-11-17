@@ -18,7 +18,7 @@ const IndexPage = ({ data }) => {
         img={data.img.childImageSharp.fluid}
         title="l'amérique du sud"
         styleClass="default-background"
-        delay="800"
+        delay="400"
       />
       <Info />
       <Slider />

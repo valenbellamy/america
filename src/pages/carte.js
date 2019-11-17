@@ -164,7 +164,7 @@ export const query = graphql`
         }
       }
     }
-    allContentfulDestination {
+    allContentfulDestination(sort: { fields: createdAt, order: DESC }) {
       edges {
         node {
           id

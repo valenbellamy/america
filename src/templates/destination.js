@@ -99,7 +99,7 @@ const Destination = ({ data }) => {
             {node.photos.map(image => (
               <div className="gallery-item" key={image.id}>
                 <Img
-                  alt={image.title}
+                  alt={image.description}
                   fluid={image.fluid}
                   backgroundColor={`#040e18`}
                 />

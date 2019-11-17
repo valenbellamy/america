@@ -59,13 +59,13 @@ const Slider = () => {
 
   const data = useStaticQuery(graphql`
     query {
-      allContentfulPays(sort: { fields: createdAt, order: ASC }) {
+      allContentfulDestination(sort: { fields: createdAt, order: DESC }) {
         edges {
           node {
             id
             title
             slug
-            coverVerticale {
+            card {
               fluid {
                 ...GatsbyContentfulFluid
               }
@@ -136,15 +136,15 @@ const Slider = () => {
           className={`${sliderStyles.slider} slider-index-${indexSlide}`}
           style={wrapperTransform}
         >
-          {data.allContentfulPays.edges.map((edge, index) => (
+          {data.allContentfulDestination.edges.map((edge, index) => (
             <Link
-              to={`/blog/pays/${edge.node.slug}`}
+              to={`/blog/${edge.node.slug}`}
               className={`${sliderStyles.slide} slide-${index}`}
               key={edge.node.id}
             >
               <Img
                 className={sliderStyles.slideImg}
-                fluid={edge.node.coverVerticale.fluid}
+                fluid={edge.node.card.fluid}
                 backgroundColor={`#040e18`}
                 imgStyle={{ transition: "all 0.5s ease" }}
               />
