@@ -64,7 +64,6 @@ const Country = ({ data }) => {
       })
     }
   }, [])
-  console.log(data)
 
   return (
     <Layout>
