@@ -59,7 +59,9 @@ const Slider = () => {
 
   const data = useStaticQuery(graphql`
     query {
-      allContentfulDestination(sort: { fields: createdAt, order: DESC }) {
+      allContentfulDestination(
+        sort: { fields: createdAt, order: DESC, limit: 6 }
+      ) {
         edges {
           node {
             id
