@@ -122,6 +122,7 @@ const Maps = ({ data }) => {
                     longitude={edge.node.localisation.lon}
                   >
                     <button
+                      id={edge.node.title}
                       className="btn--marker"
                       onClick={e => {
                         e.preventDefault()
