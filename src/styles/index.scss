@@ -17,7 +17,7 @@ body {
   }
 }
 
-.pyl {
+.pyxl {
   padding-top: 5rem;
   padding-bottom: 5rem;
   @media (max-width: 767.98px) {
@@ -26,8 +26,38 @@ body {
   }
 }
 
-.mbl {
+.pyl {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  @media (max-width: 767.98px) {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+.ptl {
+  padding-top: 3rem;
+  @media (max-width: 767.98px) {
+    padding-top: 2rem;
+  }
+}
+
+.pbxl {
+  padding-bottom: 5rem;
+  @media (max-width: 767.98px) {
+    padding-bottom: 2rem;
+  }
+}
+
+.mbxl {
   margin-bottom: 5rem;
+  @media (max-width: 767.98px) {
+    margin-bottom: 2rem;
+  }
+}
+
+.mbl {
+  margin-bottom: 3rem;
   @media (max-width: 767.98px) {
     margin-bottom: 2rem;
   }
@@ -174,8 +204,10 @@ h2,
 h2 span {
   font-family: "Julius Sans One", sans-serif;
   font-size: 2.5rem;
+  line-height: 1;
   @media (max-width: 767.98px) {
     font-size: 1.8rem;
+    line-height: 1.3;
   }
 }
 
@@ -348,14 +380,27 @@ a {
 
 .morph-wrapper {
   position: absolute;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   top: 0px;
   left: 0px;
   z-index: 100;
   svg {
     width: 100%;
     height: 100%;
+  }
+  .anime-logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -25px;
+    margin-top: -25px;
+    z-index: 3;
+    width: 50px;
+    height: 50px;
+    path {
+      fill: $white;
+    }
   }
 }
 
@@ -482,6 +527,13 @@ $i: 0;
 }
 
 /* Destination */
+
+.anime-gallery {
+  opacity: 0;
+  @media (max-width: 575.98px) {
+    opacity: 1;
+  }
+}
 
 .gallery-section {
   padding: 30vh 0rem 5rem 0rem;
@@ -654,4 +706,16 @@ $i: 0;
 
 .media p {
   margin-bottom: 0rem;
+}
+
+/* 404 */
+
+.error-404 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
 }

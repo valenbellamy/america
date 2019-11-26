@@ -24,6 +24,7 @@ $secondary: #16a085;
 .slide-img {
   width: 25vw;
   border-radius: 6px;
+  max-height: 450px;
   @media (max-width: 767.98px) {
     width: 36vw;
   }
@@ -46,8 +47,8 @@ $secondary: #16a085;
 .nav-slider {
   display: flex;
   button {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     background-color: $secondary;
     border-radius: 25px;
     display: flex;
@@ -65,7 +66,7 @@ $secondary: #16a085;
       opacity: 1;
     }
     svg {
-      width: 16px;
+      width: 14px;
     }
   }
   button:disabled {

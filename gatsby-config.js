@@ -27,8 +27,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Site sur l'Amérique du Sud`,
+        short_name: `Amérique du Sud`,
         start_url: `/`,
         background_color: `#16a085`,
         theme_color: `#16a085`,

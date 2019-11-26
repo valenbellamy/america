@@ -29,6 +29,7 @@ const Destination = ({ data }) => {
   const node = data.contentfulDestination
   let titleRef = useRef(null)
   let textRef = useRef(null)
+  let galleryRef = useRef(null)
 
   useEffect(() => {
     if (window.innerWidth > 576) {
@@ -66,6 +67,18 @@ const Destination = ({ data }) => {
           },
           400
         )
+        .add(
+          {
+            targets: galleryRef,
+            translateY: [100, 0],
+            translateZ: 0,
+            opacity: [0, 1],
+            easing: "easeOutExpo",
+            duration: 1200,
+            delay: (el, i) => 100 * i,
+          },
+          600
+        )
     }
   }, [])
 
@@ -95,7 +108,12 @@ const Destination = ({ data }) => {
               </p>
             </div>
           </div>
-          <div className="gallery">
+          <div
+            className="gallery anime-gallery"
+            ref={element => {
+              galleryRef = element
+            }}
+          >
             {node.photos.map(image => (
               <div className="gallery-item" key={image.id}>
                 <Img

@@ -60,7 +60,8 @@ const Slider = () => {
   const data = useStaticQuery(graphql`
     query {
       allContentfulDestination(
-        sort: { fields: createdAt, order: DESC, limit: 6 }
+        sort: { fields: createdAt, order: DESC }
+        limit: 6
       ) {
         edges {
           node {
@@ -78,10 +79,10 @@ const Slider = () => {
     }
   `)
   return (
-    <section className="slider-section pyl bg-grey">
+    <section className="slider-section ptl pbxl bg-grey">
       <div className="container">
         <div className="d-flex justify-content-between">
-          <h2 className="text-black mbl anime-title-2" ref={setRef}>
+          <h2 className="text-black anime-title-2 mbl" ref={setRef}>
             <span className="anime-word">nos</span>
             <span className="anime-word">destinations</span>
           </h2>
@@ -134,6 +135,7 @@ const Slider = () => {
             </button>
           </div>
         </div>
+
         <div
           className={`${sliderStyles.slider} slider-index-${indexSlide}`}
           style={wrapperTransform}

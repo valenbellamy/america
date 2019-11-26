@@ -58,12 +58,12 @@ const Info = () => {
 
   return (
     <Fragment>
-      <section className="pyl">
+      <section className="pyxl">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-6">
               <div className={homeStyles.contentPx} ref={setRef}>
-                <h2 className="text-black mbl anime-title-1">
+                <h2 className="text-black mbm anime-title-1">
                   <span className="anime-word">à</span>
                   <span className="anime-word">propos</span>
                 </h2>
