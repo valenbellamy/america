@@ -123,6 +123,7 @@ const Maps = ({ data }) => {
                   >
                     <button
                       id={edge.node.title}
+                      aria-label="Zoomer sur la destination"
                       className="btn--marker"
                       onClick={e => {
                         e.preventDefault()
