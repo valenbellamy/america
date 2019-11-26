@@ -50,7 +50,7 @@ const Anim = () => {
           opacity: 0,
           translateY: -100,
           easing: "easeInQuart",
-          duration: 900,
+          duration: 600,
           loop: false,
         })
         .add(
@@ -65,7 +65,7 @@ const Anim = () => {
             duration: 500,
             loop: false,
           },
-          "-=500"
+          "-=400"
         )
         .add({
           targets: svgRef,
