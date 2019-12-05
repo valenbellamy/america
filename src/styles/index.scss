@@ -566,13 +566,9 @@ $i: 0;
       align-self: center;
       &.two {
         width: 48.5%;
-        // max-width: 500px;
         @media (max-width: 1199.98px) {
           width: 48.5%;
         }
-        // @media (max-width: 991.98px) {
-        //   width: 45%;
-        // }
         @media (max-width: 575.98px) {
           width: 100%;
           margin-bottom: 1rem;
@@ -580,13 +576,9 @@ $i: 0;
       }
       &.three {
         width: 31.33%;
-        // max-width: 500px;
         @media (max-width: 1199.98px) {
           width: 31.33%;
         }
-        // @media (max-width: 991.98px) {
-        //   width: 45%;
-        // }
         @media (max-width: 575.98px) {
           width: 100%;
           margin-bottom: 1rem;
@@ -604,6 +596,12 @@ $i: 0;
       //     width: 100%;
       //     margin-bottom: 1rem;
       //   }
+    }
+    .item-description {
+      margin-top: 0.15rem;
+      span {
+        font-size: 0.9rem;
+      }
     }
     .gatsby-image-wrapper {
       picture img {

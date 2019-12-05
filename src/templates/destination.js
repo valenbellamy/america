@@ -127,7 +127,7 @@ const Destination = ({ data }) => {
                   fluid={image.fluid}
                   backgroundColor={`#040e18`}
                 />
-                <div className="text-center">
+                <div className="item-description">
                   <span className="text-black italic">
                     {image.description.charAt(0).toUpperCase() +
                       image.description.slice(1)}
