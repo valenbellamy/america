@@ -27,6 +27,7 @@ export const query = graphql`
 
 const Destination = ({ data }) => {
   const node = data.contentfulDestination
+  console.log(node)
   let titleRef = useRef(null)
   let textRef = useRef(null)
   let galleryRef = useRef(null)
@@ -115,13 +116,18 @@ const Destination = ({ data }) => {
             }}
           >
             {node.photos.map(image => (
-              <div className="gallery-item" key={image.id}>
+              <div
+                className={`gallery-item ${
+                  image.fluid.aspectRatio > 1 ? "two" : "three"
+                }`}
+                key={image.id}
+              >
                 <Img
                   alt={image.description}
                   fluid={image.fluid}
                   backgroundColor={`#040e18`}
                 />
-                <div>
+                <div className="text-center">
                   <span className="text-black italic">
                     {image.description.charAt(0).toUpperCase() +
                       image.description.slice(1)}
