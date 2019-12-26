@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Amerique du Sud`,
-    description: `Website to showcase a backpack trip in South America`,
-    author: `@Valentin Bellamy`,
+    title: `Cactus et Lama`,
+    description: `Itinéraire d'un voyage en Amérique du Sud`,
+    author: `@BellamyValentin`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -27,8 +27,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Site sur l'Amérique du Sud`,
-        short_name: `Amérique du Sud`,
+        name: `Cactus et Lama`,
+        short_name: `Cactus et Lama`,
         start_url: `/`,
         background_color: `#16a085`,
         theme_color: `#16a085`,
@@ -48,6 +48,15 @@ module.exports = {
             variants: [`400 `, `400i`],
           },
         ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-81337516-7",
+        // this option places the tracking script into the head of the DOM
+        head: true,
+        // other options
       },
     },
 

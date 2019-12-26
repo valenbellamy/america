@@ -68,7 +68,7 @@ const Country = ({ data }) => {
   return (
     <Layout>
       <Navbar inverse={false} />
-      <SEO title="Pays" />
+      <SEO title={data.contentfulPays.title} />
       <BackgroundSection
         img={data.contentfulPays.coverHorizontale.fluid}
         title={data.contentfulPays.title}

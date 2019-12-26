@@ -27,7 +27,6 @@ export const query = graphql`
 
 const Destination = ({ data }) => {
   const node = data.contentfulDestination
-  console.log(node)
   let titleRef = useRef(null)
   let textRef = useRef(null)
   let galleryRef = useRef(null)
@@ -86,7 +85,7 @@ const Destination = ({ data }) => {
   return (
     <Layout>
       <Navbar inverse={true} />
-      <SEO title="Destination" />
+      <SEO title={node.title} />
       <section className="gallery-section bg-grey">
         <div className="container">
           <div className="row">
