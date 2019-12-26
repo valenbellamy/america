@@ -34,6 +34,7 @@ function SEO({ description, lang, meta, title }) {
 
   const ogImage = ogImageDefault.childImageSharp.fixed.src
   const metaDescription = description || site.siteMetadata.description
+  const socialTitle = site.siteMetadata.title
 
   return (
     <Helmet
@@ -49,7 +50,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:title`,
-          content: title,
+          content: socialTitle,
         },
         {
           property: `og:description`,
@@ -73,7 +74,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: socialTitle,
         },
         {
           name: `twitter:description`,
