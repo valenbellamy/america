@@ -83,7 +83,7 @@ const Slider = () => {
       <div className="container">
         <div className="d-flex justify-content-between">
           <h2 className="text-black anime-title-2 mbl" ref={setRef}>
-            <span className="anime-word">nos</span>
+            <span className="anime-word">récentes</span>
             <span className="anime-word">destinations</span>
           </h2>
           <div className={sliderStyles.navSlider}>

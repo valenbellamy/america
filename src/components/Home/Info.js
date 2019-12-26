@@ -68,14 +68,15 @@ const Info = () => {
                   <span className="anime-word">propos</span>
                 </h2>
                 <p className="text-gray anime-p mb-2">
-                  Quisque ac lectus mauris. Duis aliquet tortor massa, ut
-                  sollicitudin justo viverra sit amet. Suspendisse potenti.
-                  Vestibulum laoreet quis augue at consectetur.
+                  Bienvenue sur Cactus et Lama, notre journal photos de voyage
+                  sur l'Amérique du Sud réalisé en 2020. Le but de ce site est
+                  de partager nos photos et notre itinéraire via une plateforme
+                  faite maison !
                 </p>
                 <p className="text-gray anime-p mb-5">
-                  Curabitur nec eleifend lacus. In congue et elit id commodo.
-                  Proin quis arcu congue, accumsan eros eu, aliquam augue.
-                  Nullam porta eu turpis eu eleifend.
+                  Nous sommes deux passionnés de voyages, amateurs en
+                  photographie ! Les photos sont prises avec un smartphone et
+                  une GoPro.
                 </p>
               </div>
             </div>
