@@ -19,7 +19,6 @@ function SEO({ description, lang, meta, title }) {
             title
             description
             author
-            image
           }
         }
         ogImageDefault: file(relativePath: { eq: "social-cover.png" }) {
