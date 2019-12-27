@@ -3,6 +3,7 @@ module.exports = {
     title: `Cactus et Lama`,
     description: `Itinéraire d'un voyage en Amérique du Sud`,
     author: `@BellamyValentin`,
+    siteUrl: `https://cactus-et-lama.fr`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -59,7 +60,7 @@ module.exports = {
         // other options
       },
     },
-
+    `gatsby-plugin-sitemap`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
