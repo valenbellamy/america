@@ -101,10 +101,12 @@ const Country = ({ data }) => {
                   <div className="card card--country mb-4">
                     <div className="row no-gutters">
                       <div className="col-lg-6">
-                        <Img
-                          fluid={edge.node.cover.fluid}
-                          backgroundColor={`#040e18`}
-                        />
+                        <Link to={`/blog/${edge.node.slug}`}>
+                          <Img
+                            fluid={edge.node.cover.fluid}
+                            backgroundColor={`#040e18`}
+                          />
+                        </Link>
                       </div>
                       <div className="col-lg-6">
                         <div className="card-body card-body--special bg-white">

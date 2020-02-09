@@ -144,7 +144,9 @@ const Maps = ({ data }) => {
                     }}
                   >
                     <div>
-                      <h4>{selectedCity.node.title}</h4>
+                      <Link to={`/blog/${edge.node.slug}`}>
+                        <h4>{selectedCity.node.title}</h4>
+                      </Link>
                     </div>
                   </Popup>
                 ) : null}
