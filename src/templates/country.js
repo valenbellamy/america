@@ -9,7 +9,10 @@ import anime from "animejs/lib/anime.es.js"
 
 export const query = graphql`
   query($slug: String!, $title: String!) {
-    allContentfulDestination(filter: { pays: { title: { eq: $title } } }) {
+    allContentfulDestination(
+      filter: { pays: { title: { eq: $title } } }
+      sort: { fields: createdAt, order: DESC }
+    ) {
       edges {
         node {
           id
