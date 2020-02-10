@@ -21,7 +21,7 @@
   margin-left: auto;
   display: block;
   width: 430px;
-  height: 630px;
+  height: 565px;
   @media (max-width: 1090px) {
     margin-right: auto;
   }
@@ -34,11 +34,11 @@
 .img-gradient {
   position: absolute;
   z-index: 1;
-  height: 450px;
+  height: 385px;
   width: 400px;
   top: 180px;
   left: 30px;
-  background-color: #adb5c7;
+  background-color: #c7ccdf;
   @media (max-width: 767.98px) {
     display: none;
   }
