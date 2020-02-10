@@ -8,7 +8,7 @@ import anime from "animejs/lib/anime.es.js"
 const Info = () => {
   const data = useStaticQuery(graphql`
     query {
-      imageOne: file(relativePath: { eq: "img-right.jpg" }) {
+      imageOne: file(relativePath: { eq: "right-pic.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 400) {
             ...GatsbyImageSharpFluid
@@ -88,7 +88,7 @@ const Info = () => {
                   fluid={data.imageOne.childImageSharp.fluid}
                   backgroundColor={`#ADB5C7`}
                   style={{ display: "block" }}
-                  alt="Photo du Machu Picchu"
+                  alt="Attention aux lamas !"
                 />
                 <div className={homeStyles.imgGradient}></div>
               </div>
