@@ -28,7 +28,7 @@ const IndexPage = ({ data }) => {
 
 export const query = graphql`
   {
-    img: file(relativePath: { eq: "cover-home.jpg" }) {
+    img: file(relativePath: { eq: "accueil-bg.jpg" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid

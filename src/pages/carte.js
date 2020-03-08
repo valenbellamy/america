@@ -142,10 +142,17 @@ const Maps = ({ data }) => {
                     onClose={() => {
                       setSelectedCity(null)
                     }}
+                    closeOnClick={false}
                   >
                     <div>
                       <h4>{selectedCity.node.title}</h4>
                     </div>
+                    <Link
+                      to={`/blog/${selectedCity.node.slug}`}
+                      className="btn btn-link btn-link-secondary"
+                    >
+                      voir les photos
+                    </Link>
                   </Popup>
                 ) : null}
               </ReactMapGL>
