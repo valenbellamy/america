@@ -46,21 +46,21 @@ const Navbar = props => {
       path: "/blog/pays/bolivie",
       text: "Bolivie",
     },
-    {
-      id: 4,
-      path: "/blog/pays/perou",
-      text: "Pérou",
-    },
-    {
-      id: 5,
-      path: "/blog/pays/equateur",
-      text: "Equateur",
-    },
-    {
-      id: 6,
-      path: "/blog/pays/colombie",
-      text: "Colombie",
-    },
+    // {
+    //   id: 4,
+    //   path: "/blog/pays/perou",
+    //   text: "Pérou",
+    // },
+    // {
+    //   id: 5,
+    //   path: "/blog/pays/equateur",
+    //   text: "Equateur",
+    // },
+    // {
+    //   id: 6,
+    //   path: "/blog/pays/colombie",
+    //   text: "Colombie",
+    // },
   ]
 
   const navbarHandler = () => {
