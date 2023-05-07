@@ -6,7 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "animejs": "^3.1.0",
-    "gatsby": "^2.16.1",
+    "gatsby": "^2.32.13",
     "gatsby-background-image": "^0.8.15",
     "gatsby-image": "^2.2.29",
     "gatsby-plugin-google-analytics": "^2.1.31",
